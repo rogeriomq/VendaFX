@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" onKeyPressed="#openView" prefHeight="531.0" prefWidth="697.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="br.edu.unirg.vendafx.home.HomePresenter">
+    <stylesheets>
+        <URL value="@home.css" />
+    </stylesheets>
+   <children>
+      <TilePane alignment="TOP_CENTER" hgap="10.0" layoutX="5.0" layoutY="129.0" prefHeight="361.0" prefWidth="687.0" vgap="10.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="129.0">
+         <children>
+            <Hyperlink alignment="CENTER" contentDisplay="BOTTOM" minWidth="-Infinity" onAction="#openViewProduto" prefHeight="120.0" prefWidth="120.0" text="PRODUTO">
+               <graphic>
+                  <Label text="F1" />
+               </graphic>
+            </Hyperlink>
+            <Hyperlink alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" minWidth="-Infinity" onAction="#openViewCliente" prefHeight="120.0" prefWidth="120.0" styleClass="hiperlink-cliente" text="CLIENTE">
+               <graphic>
+                  <Label text="F2" />
+               </graphic>
+            </Hyperlink>
+            <Hyperlink contentDisplay="BOTTOM" minWidth="-Infinity" onAction="#openViewVenda" prefHeight="120.0" prefWidth="120.0" text="VENDA">
+               <graphic>
+                  <Label text="F3" />
+               </graphic>
+            </Hyperlink>
+            <Hyperlink contentDisplay="BOTTOM" minWidth="-Infinity" onAction="#openViewRelatorio" prefHeight="120.0" prefWidth="120.0" text="RELATÓRIO">
+               <graphic>
+                  <Label contentDisplay="BOTTOM" text="F4" />
+               </graphic>
+            </Hyperlink>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </TilePane>
+      <HBox alignment="BASELINE_LEFT" layoutX="-1.0" layoutY="7.0" prefHeight="117.0" prefWidth="697.0" spacing="3.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <Text fx:id="venda" stroke="#bec6aa" strokeType="OUTSIDE" strokeWidth="5.0" text="VENDAS" />
+            <Text fx:id="fx" strokeType="OUTSIDE" strokeWidth="0.0" text="FX" />
+            <Text fx:id="version" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0.1" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

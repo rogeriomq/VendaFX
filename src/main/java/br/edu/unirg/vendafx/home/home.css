@@ -1,0 +1,32 @@
+/*
+ * Empty Stylesheet file.
+ */
+.hyperlink {
+    -fx-background-image: url(../img/cliente_48dp.png);
+    -fx-background-position: 100%, center;
+    -fx-background-size: cover, cover;
+    -fx-background-repeat: no-repeat;
+    -fx-alignment: BOTTOM_CENTER;
+    -fx-content-display: bottom;
+}
+
+/*.hiperlink-cliente {
+    -fx-graphic: url(../img/cliente_48dp.png);
+    -fx-background-image: url(../img/cliente_48dp.png);
+    -fx-background-position: CENTER,100;
+    -fx-background-repeat: no-repeat;
+}*/
+
+#venda {
+    -fx-font-size:100px; 
+    -fx-fill: darkseagreen;   
+    -fx-font-weight: bolder;
+}
+#fx {
+    -fx-font-size:60px;
+    -fx-font-weight: bolder;
+}
+#version {
+    -fx-font-size:20px;
+    -fx-fill: cadetblue;
+}
