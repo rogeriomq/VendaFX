@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="569.0" prefWidth="803.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="br.edu.unirg.vendafx.cliente.ClientePresenter">
+<AnchorPane id="AnchorPane" prefHeight="569.0" prefWidth="803.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unirg.vendafx.cliente.ClientePresenter">
     <stylesheets>
         <URL value="@cliente.css" />
     </stylesheets>
@@ -23,12 +23,12 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button layoutX="10.0" layoutY="14.0" mnemonicParsing="false" text="Deletar" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="14.0" />
-      <TextField layoutX="108.0" layoutY="14.0" prefHeight="26.0" prefWidth="518.0" />
+      <Button layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteCliente" text="Deletar" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="14.0" />
+      <TextField fx:id="textFieldFiltro" layoutX="108.0" layoutY="14.0" onAction="#filtrarCliente" prefHeight="26.0" prefWidth="518.0" promptText="Pressione ENTER para buscar." />
       <HBox alignment="BOTTOM_CENTER" layoutX="667.0" prefHeight="40.0" prefWidth="159.0" spacing="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button mnemonicParsing="false" text="Add" />
-            <Button mnemonicParsing="false" text="Editar" />
+            <Button fx:id="btAdd" mnemonicParsing="false" onAction="#abrirClienteEdit" text="Add" />
+            <Button fx:id="btEdit" mnemonicParsing="false" onAction="#abrirClienteEdit" text="Editar" />
          </children>
       </HBox>
    </children>

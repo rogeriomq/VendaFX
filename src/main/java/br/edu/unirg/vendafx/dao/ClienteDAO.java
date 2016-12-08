@@ -11,8 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -21,7 +19,7 @@ import java.util.logging.Logger;
 public class ClienteDAO extends ConexaoDB {
 
     public void saveOrUpdate(Cliente obj) {
-        String sql = "insert into clientes set idcliente=?, nome=?, cpf=?, telefone=? "
+        String sql = "insert into clientes set cdCliente=?, nome=?, cpf=?, telefone=? "
                 + "ON DUPLICATE KEY UPDATE nome=?, cpf=?, telefone=?";
         open();
         try {
@@ -42,7 +40,7 @@ public class ClienteDAO extends ConexaoDB {
     }
 
     public void delete(int id) {
-        String sql = "delete from clientes where idcliente = ?";
+        String sql = "delete from clientes where cdCliente = ?";
         open();
         try {
             PreparedStatement stm = conexao.prepareStatement(sql);
@@ -54,16 +52,20 @@ public class ClienteDAO extends ConexaoDB {
             close();
         }
     }
-    public List<Cliente> listAll() {
+    public List<Cliente> listAll(String filter) {
         List<Cliente> listagem = new ArrayList<>();
-        String sql = "select * from clientes";
+        String sql = "select * from clientes where nome like ? or cpf like ? or telefone like ?";
         open();
         try {
             PreparedStatement stm = conexao.prepareStatement(sql);
+            stm.setString(1, "%" + filter + "%");
+            stm.setString(2, "%" + filter + "%");
+            stm.setString(3, "%" + filter + "%");
+            System.out.println(stm);
             ResultSet rs = stm.executeQuery();
             while(rs.next()) {
                 Cliente obj = new Cliente();
-                obj.setIdCliente(rs.getInt("idcliente"));
+                obj.setIdCliente(rs.getInt("cdCliente"));
                 obj.setNome(rs.getString("nome"));
                 obj.setCpf(rs.getString("cpf"));
                 obj.setTelefone(rs.getString("telefone"));

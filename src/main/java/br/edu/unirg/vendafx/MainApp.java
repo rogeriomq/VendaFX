@@ -14,14 +14,13 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-//        ConexaoDB conexao = new ConexaoDB();
-//        conexao.open();
-//        conexao.close();
 //        Cliente c = new Cliente();
-//        c.setNome("ZEBEDEU");
-//        c.setCpf("00591266222");
+//        c.setNome("ROGERIO M. DE QUEIROZ");
+//        c.setCpf("00591266245");
 //        c.setTelefone("63992272369");
-//        
+//        ClienteDAO dao = new ClienteDAO();
+//        dao.saveOrUpdate(c);
+
         HomeView view = new HomeView();
         stage.setTitle("|..VendaFX..|");
         stage.setScene(new Scene(view.getView()));
